@@ -1,9 +1,9 @@
-require 'csv'
-require_relative 'student'
-require_relative 'course_attempt.rb'
+require_relative 'all'
 
-students = CSV.read('data-2016.csv', col_sep: ' ').each_with_object([]) do |line, array|
-  array << Student.new(line)
-end
+students = Students.new 'data-2016.csv'
 
-puts students.count { |s| s.passed?('Ohjelmoinnin_jatkokurssi') && s.passed?('Ohjelmoinnin_perusteet') && s.passed?('Tietorakenteet_ja_algoritmit') }
+puts students
+  .with_passed('Ohjelmoinnin_jatkokurssi')
+  .with_passed('Ohjelmoinnin_perusteet')
+  .with_passed('Tietorakenteet_ja_algoritmit')
+  .count

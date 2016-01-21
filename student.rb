@@ -1,6 +1,3 @@
-require 'active_support'
-require 'active_support/core_ext'
-
 class Student
   def initialize(data)
     @year = data[0]
@@ -8,19 +5,11 @@ class Student
     @attempts = @data.map { |o| CourseAttempt.new o }
   end
 
-  def attempted?(course_name)
-    @attempts.any? do |a|
-      a.name == course_name
-    end
-  end
-
   def passed?(course_name)
-    @attempts.any? do |a|
-      a.name == course_name && a.grade > 0
-    end
+    has? course_name, 1..6
   end
 
-  def gotten_grade?(course_name, grade)
+  def has?(course_name, grade = 0..6)
     @attempts.any? do |a|
       if grade.is_a? Range
         a.name == course_name && grade.cover?(a.grade)

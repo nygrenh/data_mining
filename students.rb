@@ -17,8 +17,12 @@ class Students
     @students.each(&block)
   end
 
-  def who_have(course_name, grade = 0..6)
-    Students.new(@students.select { |s| s.gotten_grade? course_name, grade })
+  def with(course_name, grade = 0..6)
+    Students.new(@students.select { |s| s.has? course_name, grade })
+  end
+
+  def with_passed(course_name)
+    with(course_name, 1..6)
   end
 
   private
