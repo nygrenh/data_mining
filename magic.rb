@@ -11,19 +11,13 @@ class Magic
   end
 
   def self.generate(lists)
+    return [] if lists.length <= 1
     response = []
-    return response if lists.length <= 1
 
-    index = 0
-    while index < (lists.length - 1)
-      first = lists[index]
-      index2 = index + 1
-      while index2 < lists.length
-        second = lists[index2]
+    lists[0..-2].each_with_index do |first, index|
+      lists[(index + 1)..-1].each do |second|
         response << union(first, second) if first[0..-2] == second[0..-2]
-        index2 += 1
       end
-      index += 1
     end
     response
   end
