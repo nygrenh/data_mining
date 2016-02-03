@@ -34,4 +34,28 @@ RSpec.describe 'Data' do
   it 'Ninth' do
     expect(`ruby 9.rb`.to_i).to eq(84)
   end
+
+  it '12' do
+    expect(`ruby 12.rb`.to_i).to eq(0)
+  end
+
+  it '13' do
+    expect(`ruby 13.rb`.to_i).to eq(462)
+  end
+
+  it '14' do
+    expect(`ruby 14.rb`.to_f).to eq(0.3271954674220963)
+  end
+
+  it '18' do
+    expect(`ruby 18.rb`.to_f).to eq(0.838475499092559)
+  end
+
+  it 'w2-7' do
+    expect(`ruby w2-7.rb`.to_i).to eq(380)
+  end
+
+  it 'w2-8' do
+    expect(`ruby w2-8.rb`.to_i).to eq(72_010)
+  end
 end
