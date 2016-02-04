@@ -1,2 +1,13 @@
 w2-9: real    2m21.631s
 w2-10: real    8m45.384s
+
+
+375 combinations, size: 1, benchmark: #<Benchmark::Tms:0x536f60d0 @stime=49.66, @label="", @cstime=0.0, @real=200.37114164899958, @total=394.58000000000004, @cutime=0.0, @utime=344.92>
+1131 combinations, size: 2, benchmark: #<Benchmark::Tms:0x5e3cb65d @stime=1.8400000000000034, @label="", @cstime=0.0, @real=6.497986376999506, @total=14.619999999999976, @cutime=0.0, @utime=12.779999999999973>
+1814 combinations, size: 3, benchmark: #<Benchmark::Tms:0x38906616 @stime=2.5899999999999963, @label="", @cstime=0.0, @real=9.799333234000187, @total=21.570000000000014, @cutime=0.0, @utime=18.980000000000018>
+1759 combinations, size: 4, benchmark: #<Benchmark::Tms:0x2db76d0b @stime=2.6099999999999994, @label="", @cstime=0.0, @real=9.906271419999939, @total=21.580000000000027, @cutime=0.0, @utime=18.970000000000027>
+1063 combinations, size: 5, benchmark: #<Benchmark::Tms:0x24b5995c @stime=1.740000000000002, @label="", @cstime=0.0, @real=6.180976824000027, @total=14.13999999999998, @cutime=0.0, @utime=12.399999999999977>
+377 combinations, size: 6, benchmark: #<Benchmark::Tms:0x2b2ffb23 @stime=0.5899999999999963, @label="", @cstime=0.0, @real=2.4892272659999435, @total=5.339999999999996, @cutime=0.0, @utime=4.75>
+72 combinations, size: 7, benchmark: #<Benchmark::Tms:0x22f6e494 @stime=0.13000000000000256, @label="", @cstime=0.0, @real=0.5653446699998312, @total=1.2300000000000253, @cutime=0.0, @utime=1.1000000000000227>
+7 combinations, size: 8, benchmark: #<Benchmark::Tms:0x1808021a @stime=0.020000000000003126, @label="", @cstime=0.0, @real=0.06862462499975663, @total=0.1699999999999804, @cutime=0.0, @utime=0.14999999999997726>
+0 combinations, size: 9, benchmark: #<Benchmark::Tms:0xec6e62f @stime=0.0, @label="", @cstime=0.0, @real=0.0028950189998795395, @total=0.0, @cutime=0.0, @utime=0.0>
