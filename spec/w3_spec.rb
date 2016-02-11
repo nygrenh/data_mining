@@ -79,6 +79,10 @@ RSpec.describe 'SequenceAppriori' do
     it 'should calculate correctly' do
       expect(subject.support(students, [[3], [4, 5]])).to eq(0.5)
     end
+
+    it 'should calculate correctly' do
+      expect(subject.support(students, [[4, 5]])).to eq(0.5)
+    end
   end
 
   describe '#prune' do

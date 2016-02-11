@@ -7,11 +7,14 @@ class SequenceAppriori
       parallel = Parallel
       time = Benchmark.measure do
         res = ThreadSafe::Array.new
+        semaphore = Mutex.new
         parallel.each(generate(courses)) do |course|
           s = support(students, course)
           if s >= support
             res << course
-            puts "#{s}, #{course.inspect}"
+            semaphore.synchronize do
+              puts "#{s}, #{course.inspect}"
+            end
           end
         end
         courses = res
@@ -25,7 +28,7 @@ class SequenceAppriori
   def support(students, courses)
     res = 0
     semaphore = Mutex.new
-    Parallel.each(students) do |student|
+    students.each do |student|
       indexes = courses.map { |course| student.index { |s| course.all? { |c| s.include? c } } }
       next unless indexes.each_cons(2).all? { |p, n| (p <=> n) != 1 } && indexes.none?(&:nil?) # sorted?
       semaphore.synchronize do

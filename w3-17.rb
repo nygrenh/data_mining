@@ -10,4 +10,4 @@ end
 a = students.courses.map { |e| [[e.code.to_i]] }
 
 appriori = SequenceAppriori.new
-appriori.appriori(codes, 0.01, a)
+appriori.appriori(codes, 0.2, a)
