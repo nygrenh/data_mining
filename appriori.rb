@@ -11,7 +11,7 @@ def appriori(students, support, courses)
       end
       courses = res
     end
-     puts "#{courses.size} combinations, size: #{k}, benchmark: #{time.inspect}"
+    puts "#{courses.size} combinations, size: #{k}, benchmark: #{time.inspect}"
     k += 1
   end
 end
@@ -42,7 +42,7 @@ end
 
 students = Students.new('data-2016.csv')
 codes = students.map do |student|
-  student.attempts.map{ |a| a.code.to_i }
+  student.attempts.map { |a| a.code.to_i }
 end
 
 a = students.courses.map { |e| [e.code.to_i] }
