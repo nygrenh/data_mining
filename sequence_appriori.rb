@@ -9,7 +9,10 @@ class SequenceAppriori
         res = ThreadSafe::Array.new
         parallel.each(generate(courses)) do |course|
           s = support(students, course)
-          res << course if s >= support
+          if s >= support
+            res << course
+            puts "#{s}, #{course.inspect}"
+          end
         end
         courses = res
       end
